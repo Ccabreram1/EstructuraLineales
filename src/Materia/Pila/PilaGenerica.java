@@ -6,16 +6,18 @@ import Materia.Models.NodeGenerico;
 public class PilaGenerica<T> {
 
     private NodeGenerico<T> top;
+    public int size;
     
     public PilaGenerica(){
         top = null;
-
+        size = 0;
     }
         
     public void push (T dato){
         NodeGenerico <T> nuevoNodo = new NodeGenerico<T>(dato);
         nuevoNodo.next = top;
         top = nuevoNodo;
+        size++;
 
     }
 
@@ -30,6 +32,7 @@ public class PilaGenerica<T> {
             throw new EmptyStackException();
 
         }
+        size--;
         return top.data;
     }
     public T peek (){
@@ -39,5 +42,9 @@ public class PilaGenerica<T> {
             
         }
         return top.data;
+    }
+
+    public int size(){
+        return size;
     }
 }
