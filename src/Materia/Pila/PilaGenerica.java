@@ -32,8 +32,10 @@ public class PilaGenerica<T> {
             throw new EmptyStackException();
 
         }
+        T value = top.data;
+        top=top.next;
         size--;
-        return top.data;
+        return value;
     }
     public T peek (){
         if (isEmpty()) {

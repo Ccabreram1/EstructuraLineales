@@ -39,7 +39,7 @@ public class Pila {
 
     public int peek (){
         if (top == null){
-            System.out.println("La pila est vacia");
+            System.out.println("La pila esta vacia");
             throw new EmptyStackException();
 
         }

@@ -1,9 +1,10 @@
 import Materia.Models.Pantallas;
 import Materia.Pila.*;
-
-import java.util.Queue;
-
 import Materia.Cola.*;
+
+import Ejercicio_01_sign.*;
+import Ejercicio_02_sorting.StackSorter;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -90,14 +91,31 @@ public class App {
         System.out.println("Pantalla destruido \t "+ queuGenerica.remove().getNombre());
         System.out.println("Estoy en la pantalla \t " + queuGenerica.peek().getNombre());
         System.out.println("La cola tiene "+  queuGenerica.size() + " elementos");
- 
 
 
 
+        //SIGN VALIDATOR 
+        //instanciamos
+        SignValidator validator = new SignValidator();
+        //enviamos para verificar si sale bien o mal
+            //true
+        System.out.println(validator.isValid("([]){}") );
 
+            //false
+        System.out.println(validator.isValid("({)}") );
 
+        //STACK
+        StackSorter stack = new StackSorter();
+        Pila pil = new Pila();
 
+        pil.push(5);
+        pil.push(10);
+        pil.push(13);
+        pil.push(27);
+        pil.push(36);
+        pil.push(42);
 
+        stack.sortStack(pil);
 
 
 
