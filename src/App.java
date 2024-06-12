@@ -1,9 +1,10 @@
 import Materia.Models.Pantallas;
 import Materia.Pila.*;
 import Materia.Cola.*;
-
+import Materia.ListasEnlazadas.ListaEnlazada;
 import Ejercicio_01_sign.*;
 import Ejercicio_02_sorting.StackSorter;
+import Ejercicio_03_linkedLists.LinkedListEjr;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -117,7 +118,40 @@ public class App {
 
         stack.sortStack(pil);
 
+        //LISTA ENLAZADA
+        ListaEnlazada listaE =  new ListaEnlazada();
+        listaE.addNode(1);
+        listaE.addNode(4);
+        listaE.addNode(3);
+        listaE.addNode(6);
+        listaE.print();
+        listaE.deleteNode(1);
+        listaE.print();
+        listaE.deleteNode(3);
+        listaE.print();
 
+
+        //LinkedListEjr
+
+        System.out.println("");
+        System.out.println("LinkedListEjr");
+
+        LinkedListEjr linkedl = new LinkedListEjr();
+
+        linkedl.addNode(1);
+        linkedl.addNode(2);
+        linkedl.addNode(3);
+        linkedl.addNode(4);
+        linkedl.addNode(5);
+        linkedl.addNode(6);
+        linkedl.addNode(7);
+        
+
+        int position = 5;
+        int resultado = linkedl.getByPos(position);
+        System.out.println("El nodo en la posicion "+ position+ " desde el final es: "+resultado);
+
+      
 
     }
 }
